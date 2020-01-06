@@ -2,3 +2,8 @@ C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.Form1.resources
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.Properties.Resources.resources
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.csproj.GenerateResource.cache
+C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\bin\Debug\Assignment 1.exe.config
+C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\bin\Debug\Assignment 1.exe
+C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\bin\Debug\Assignment 1.pdb
+C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.exe
+C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.pdb

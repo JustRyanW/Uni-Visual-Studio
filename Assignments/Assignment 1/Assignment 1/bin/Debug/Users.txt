@@ -1,0 +1,12 @@
+~
+ryan
+password
+True
+~
+dan
+superStrongPassword
+False
+~
+jack
+levitt
+False

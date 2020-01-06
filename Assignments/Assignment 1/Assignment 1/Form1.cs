@@ -13,8 +13,8 @@ namespace Assignment_1
 {
     public struct User
     {
-        string username, password;
-        bool admin;
+        public string username, password;
+        public bool admin;
 
         public User (string username, string password = "", bool admin = false)
         {
@@ -26,23 +26,15 @@ namespace Assignment_1
 
     public partial class Form1 : Form
     {
-        private string username, password;
-
-        private List<User> users;
+        public List<User> users = new List<User>();
 
         public Form1()
         {
             InitializeComponent();
-        }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-            username = txtUsername.Text;
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            password = txtPassword.Text;
+            ReadUsers();
+            MessageBox.Show(ListUsers());
+            WriteUsers();
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -55,19 +47,46 @@ namespace Assignment_1
 
         }
 
-        string encryptString(string str)
+        string EncryptString(string str)
         {
             return str;
         }
 
-        void readUsers()
+        void ReadUsers()
         {
+            if (!File.Exists("Users.txt"))
+                File.Create("Users.txt");
 
+            using (StreamReader sr = new StreamReader("Users.txt"))
+                while (sr.Peek() > -1)
+                    if (sr.ReadLine() == "~")
+                        users.Add(new User(sr.ReadLine(), sr.ReadLine(), Convert.ToBoolean(sr.ReadLine())));
         }
 
-        void writeUsers()
+        void WriteUsers()
         {
-
+            using (StreamWriter sw = new StreamWriter("Users.txt"))
+            {
+                foreach (User user in users)
+                {
+                    sw.WriteLine("~");
+                    sw.WriteLine(user.username);
+                    sw.WriteLine(user.password);
+                    sw.WriteLine(user.admin);
+                }
+            }
+        }
+         
+        string ListUsers()
+        {
+            string userList = "";
+            foreach (User user in users)
+            {
+                userList += "Username: " + user.username + "\n";
+                userList += "Password: " + user.password + "\n";
+                userList += "Admin: " + user.admin.ToString() + "\n\n";
+            }
+            return userList;
         }
     }
 }
