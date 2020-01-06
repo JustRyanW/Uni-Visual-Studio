@@ -24,11 +24,11 @@ namespace Assignment_1
         }
     }
 
-    public partial class Form1 : Form
+    public partial class frmLogin : Form
     {
         public List<User> users = new List<User>();
 
-        public Form1()
+        public frmLogin()
         {
             InitializeComponent();
 
@@ -38,37 +38,49 @@ namespace Assignment_1
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            User user = new User(txtUsername.Text);
-            if (!FindUser(ref user))
+            User newUser = new User(txtUsername.Text, txtPassword.Text);
+            if (!FindUser(ref newUser))
             {
-                if (txtPassword.Text.Length < 4)
+                if (newUser.username.Length < 4)
+                    MessageBox.Show("Username must be more than 4 characters");
+                else if (newUser.password.Length < 4)
                     MessageBox.Show("Password must be more than 4 characters");
-                if (txtPassword.Text == txtUsername.Text)
+                else if (newUser.password == newUser.username)
                     MessageBox.Show("Your password must be different from your username");
                 else
                 {
-                    users.Add(new User(txtUsername.Text, EncryptString(txtPassword.Text)));
-                    MessageBox.Show("Success");
+                    newUser.password = EncryptString(newUser.password);
+                    users.Add(newUser);
+                    Login(newUser);
                 }
             }
             else
                 MessageBox.Show("This username is already taken");
-
-            WriteUsers();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = new User(txtUsername.Text);
-            if (FindUser(ref user))
+            User userLookup = new User(txtUsername.Text);
+            if (FindUser(ref userLookup))
             {
-                if (EncryptString(txtPassword.Text) == user.password)
-                    MessageBox.Show("Success");
+                User userLogin = new User(txtUsername.Text, EncryptString(txtPassword.Text));
+                if (userLogin.password == userLookup.password)
+                    Login(userLogin);
                 else
                     MessageBox.Show("Incorrect password");
             }
             else
                 MessageBox.Show("No user by this name found");
+        }
+
+        void Login(User user)
+        {
+            // move to quit
+            WriteUsers();
+
+            Hide();
+            frmMenu menu = new frmMenu();
+            menu.ShowDialog();
         }
 
         string EncryptString(string str)

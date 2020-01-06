@@ -18,3 +18,7 @@ False
 admin
 levitt
 False
+~
+hello
+hello1
+False
