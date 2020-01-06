@@ -10,3 +10,11 @@ False
 jack
 levitt
 False
+~
+dantheman
+dantheman
+False
+~
+admin
+levitt
+False

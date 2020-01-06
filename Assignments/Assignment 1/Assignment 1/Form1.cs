@@ -33,23 +33,61 @@ namespace Assignment_1
             InitializeComponent();
 
             ReadUsers();
-            MessageBox.Show(ListUsers());
-            WriteUsers();
+            ListUserData();
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            User user = new User(txtUsername.Text);
+            if (!FindUser(ref user))
+            {
+                if (txtPassword.Text.Length < 4)
+                    MessageBox.Show("Password must be more than 4 characters");
+                if (txtPassword.Text == txtUsername.Text)
+                    MessageBox.Show("Your password must be different from your username");
+                else
+                {
+                    users.Add(new User(txtUsername.Text, EncryptString(txtPassword.Text)));
+                    MessageBox.Show("Success");
+                }
+            }
+            else
+                MessageBox.Show("This username is already taken");
 
+            WriteUsers();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            User user = new User(txtUsername.Text);
+            if (FindUser(ref user))
+            {
+                if (EncryptString(txtPassword.Text) == user.password)
+                    MessageBox.Show("Success");
+                else
+                    MessageBox.Show("Incorrect password");
+            }
+            else
+                MessageBox.Show("No user by this name found");
         }
 
         string EncryptString(string str)
         {
             return str;
+        }
+
+        bool FindUser(ref User userLogin)
+        {
+            bool userExists = false;
+            foreach(User user in users)
+            {
+                if (userLogin.username == user.username)
+                {
+                    userLogin = user;
+                    userExists = true;
+                }
+            }
+            return userExists;
         }
 
         void ReadUsers()
@@ -77,7 +115,7 @@ namespace Assignment_1
             }
         }
          
-        string ListUsers()
+        void ListUserData()
         {
             string userList = "";
             foreach (User user in users)
@@ -86,7 +124,7 @@ namespace Assignment_1
                 userList += "Password: " + user.password + "\n";
                 userList += "Admin: " + user.admin.ToString() + "\n\n";
             }
-            return userList;
+            MessageBox.Show(userList);
         }
     }
 }
