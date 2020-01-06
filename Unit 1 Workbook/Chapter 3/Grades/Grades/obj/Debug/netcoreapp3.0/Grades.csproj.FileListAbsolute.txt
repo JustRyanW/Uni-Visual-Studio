@@ -1,0 +1,10 @@
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\bin\Debug\netcoreapp3.0\Grades.exe
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\bin\Debug\netcoreapp3.0\Grades.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\bin\Debug\netcoreapp3.0\Grades.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\bin\Debug\netcoreapp3.0\Grades.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\bin\Debug\netcoreapp3.0\Grades.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\bin\Debug\netcoreapp3.0\Grades.pdb
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\obj\Debug\netcoreapp3.0\Grades.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\obj\Debug\netcoreapp3.0\Grades.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\obj\Debug\netcoreapp3.0\Grades.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\Grades\Grades\obj\Debug\netcoreapp3.0\Grades.pdb

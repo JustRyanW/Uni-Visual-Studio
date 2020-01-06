@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\bin\Debug\netcoreapp3.0\Mountains.exe
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\bin\Debug\netcoreapp3.0\Mountains.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\bin\Debug\netcoreapp3.0\Mountains.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\bin\Debug\netcoreapp3.0\Mountains.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\bin\Debug\netcoreapp3.0\Mountains.dll
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\bin\Debug\netcoreapp3.0\Mountains.pdb
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\obj\Debug\netcoreapp3.0\Mountains.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\obj\Debug\netcoreapp3.0\Mountains.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\obj\Debug\netcoreapp3.0\Mountains.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\obj\Debug\netcoreapp3.0\Mountains.dll
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 7\Mountains\Mountains\obj\Debug\netcoreapp3.0\Mountains.pdb

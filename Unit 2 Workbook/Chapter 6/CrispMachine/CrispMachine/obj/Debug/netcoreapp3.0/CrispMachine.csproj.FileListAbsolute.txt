@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\bin\Debug\netcoreapp3.0\CrispMachine.exe
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\bin\Debug\netcoreapp3.0\CrispMachine.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\bin\Debug\netcoreapp3.0\CrispMachine.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\bin\Debug\netcoreapp3.0\CrispMachine.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\bin\Debug\netcoreapp3.0\CrispMachine.dll
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\bin\Debug\netcoreapp3.0\CrispMachine.pdb
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\obj\Debug\netcoreapp3.0\CrispMachine.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\obj\Debug\netcoreapp3.0\CrispMachine.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\obj\Debug\netcoreapp3.0\CrispMachine.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\obj\Debug\netcoreapp3.0\CrispMachine.dll
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 6\CrispMachine\CrispMachine\obj\Debug\netcoreapp3.0\CrispMachine.pdb

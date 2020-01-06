@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\bin\Debug\netcoreapp3.0\Arcade.exe
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\bin\Debug\netcoreapp3.0\Arcade.deps.json
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\bin\Debug\netcoreapp3.0\Arcade.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\bin\Debug\netcoreapp3.0\Arcade.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\bin\Debug\netcoreapp3.0\Arcade.dll
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\bin\Debug\netcoreapp3.0\Arcade.pdb
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\obj\Debug\netcoreapp3.0\Arcade.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\obj\Debug\netcoreapp3.0\Arcade.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\obj\Debug\netcoreapp3.0\Arcade.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\obj\Debug\netcoreapp3.0\Arcade.dll
+C:\Users\Ryan Walker\source\repos\Projects\Arcade\Arcade\obj\Debug\netcoreapp3.0\Arcade.pdb

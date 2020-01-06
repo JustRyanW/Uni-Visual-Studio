@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\bin\Debug\netcoreapp3.0\FenceForMelody.exe
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\bin\Debug\netcoreapp3.0\FenceForMelody.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\bin\Debug\netcoreapp3.0\FenceForMelody.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\bin\Debug\netcoreapp3.0\FenceForMelody.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\bin\Debug\netcoreapp3.0\FenceForMelody.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\bin\Debug\netcoreapp3.0\FenceForMelody.pdb
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\obj\Debug\netcoreapp3.0\FenceForMelody.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\obj\Debug\netcoreapp3.0\FenceForMelody.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\obj\Debug\netcoreapp3.0\FenceForMelody.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\obj\Debug\netcoreapp3.0\FenceForMelody.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 2\FenceForMelody\FenceForMelody\obj\Debug\netcoreapp3.0\FenceForMelody.pdb

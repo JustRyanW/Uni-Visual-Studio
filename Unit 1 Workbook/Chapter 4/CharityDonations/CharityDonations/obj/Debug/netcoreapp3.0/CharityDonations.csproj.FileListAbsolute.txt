@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\bin\Debug\netcoreapp3.0\CharityDonations.exe
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\bin\Debug\netcoreapp3.0\CharityDonations.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\bin\Debug\netcoreapp3.0\CharityDonations.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\bin\Debug\netcoreapp3.0\CharityDonations.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\bin\Debug\netcoreapp3.0\CharityDonations.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\bin\Debug\netcoreapp3.0\CharityDonations.pdb
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\obj\Debug\netcoreapp3.0\CharityDonations.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\obj\Debug\netcoreapp3.0\CharityDonations.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\obj\Debug\netcoreapp3.0\CharityDonations.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\obj\Debug\netcoreapp3.0\CharityDonations.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\CharityDonations\CharityDonations\obj\Debug\netcoreapp3.0\CharityDonations.pdb

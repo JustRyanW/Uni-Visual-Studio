@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\bin\Debug\netcoreapp3.0\HelensApp.exe
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\bin\Debug\netcoreapp3.0\HelensApp.deps.json
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\bin\Debug\netcoreapp3.0\HelensApp.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\bin\Debug\netcoreapp3.0\HelensApp.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\bin\Debug\netcoreapp3.0\HelensApp.dll
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\bin\Debug\netcoreapp3.0\HelensApp.pdb
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\obj\Debug\netcoreapp3.0\HelensApp.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\obj\Debug\netcoreapp3.0\HelensApp.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\obj\Debug\netcoreapp3.0\HelensApp.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\obj\Debug\netcoreapp3.0\HelensApp.dll
+C:\Users\Ryan Walker\source\repos\HelensApp\HelensApp\obj\Debug\netcoreapp3.0\HelensApp.pdb

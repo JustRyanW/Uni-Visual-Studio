@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\bin\Debug\netcoreapp3.0\WeddingInvitation.exe
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\bin\Debug\netcoreapp3.0\WeddingInvitation.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\bin\Debug\netcoreapp3.0\WeddingInvitation.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\bin\Debug\netcoreapp3.0\WeddingInvitation.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\bin\Debug\netcoreapp3.0\WeddingInvitation.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\bin\Debug\netcoreapp3.0\WeddingInvitation.pdb
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\obj\Debug\netcoreapp3.0\WeddingInvitation.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\obj\Debug\netcoreapp3.0\WeddingInvitation.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\obj\Debug\netcoreapp3.0\WeddingInvitation.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\obj\Debug\netcoreapp3.0\WeddingInvitation.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 1\WeddingInvitation\WeddingInvitation\obj\Debug\netcoreapp3.0\WeddingInvitation.pdb

@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\bin\Debug\netcoreapp3.0\TipTheWaiter.exe
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\bin\Debug\netcoreapp3.0\TipTheWaiter.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\bin\Debug\netcoreapp3.0\TipTheWaiter.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\bin\Debug\netcoreapp3.0\TipTheWaiter.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\bin\Debug\netcoreapp3.0\TipTheWaiter.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\bin\Debug\netcoreapp3.0\TipTheWaiter.pdb
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\obj\Debug\netcoreapp3.0\TipTheWaiter.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\obj\Debug\netcoreapp3.0\TipTheWaiter.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\obj\Debug\netcoreapp3.0\TipTheWaiter.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\obj\Debug\netcoreapp3.0\TipTheWaiter.dll
+C:\Users\Ryan Walker\source\repos\Unit 1 Workbook\Chapter 3\TipTheWaiter\TipTheWaiter\obj\Debug\netcoreapp3.0\TipTheWaiter.pdb

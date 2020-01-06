@@ -1,0 +1,10 @@
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.0\ConsoleApp2.exe
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.0\ConsoleApp2.deps.json
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.0\ConsoleApp2.runtimeconfig.json
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.0\ConsoleApp2.runtimeconfig.dev.json
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.0\ConsoleApp2.dll
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.0\ConsoleApp2.pdb
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\obj\Debug\netcoreapp3.0\ConsoleApp2.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\obj\Debug\netcoreapp3.0\ConsoleApp2.AssemblyInfo.cs
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\obj\Debug\netcoreapp3.0\ConsoleApp2.dll
+C:\Users\Ryan Walker\Documents\Projects\ConsoleApp2\ConsoleApp2\obj\Debug\netcoreapp3.0\ConsoleApp2.pdb

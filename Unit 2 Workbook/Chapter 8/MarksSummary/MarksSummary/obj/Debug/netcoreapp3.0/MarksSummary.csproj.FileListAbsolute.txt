@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\bin\Debug\netcoreapp3.0\MarksSummary.exe
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\bin\Debug\netcoreapp3.0\MarksSummary.deps.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\bin\Debug\netcoreapp3.0\MarksSummary.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\bin\Debug\netcoreapp3.0\MarksSummary.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\bin\Debug\netcoreapp3.0\MarksSummary.dll
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\bin\Debug\netcoreapp3.0\MarksSummary.pdb
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\obj\Debug\netcoreapp3.0\MarksSummary.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\obj\Debug\netcoreapp3.0\MarksSummary.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\obj\Debug\netcoreapp3.0\MarksSummary.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\obj\Debug\netcoreapp3.0\MarksSummary.dll
+C:\Users\Ryan Walker\source\repos\Unit 2 Workbook\Chapter 8\MarksSummary\MarksSummary\obj\Debug\netcoreapp3.0\MarksSummary.pdb

@@ -1,0 +1,11 @@
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\bin\Debug\netcoreapp3.0\Sorter.exe
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\bin\Debug\netcoreapp3.0\Sorter.deps.json
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\bin\Debug\netcoreapp3.0\Sorter.runtimeconfig.json
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\bin\Debug\netcoreapp3.0\Sorter.runtimeconfig.dev.json
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\bin\Debug\netcoreapp3.0\Sorter.dll
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\bin\Debug\netcoreapp3.0\Sorter.pdb
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\obj\Debug\netcoreapp3.0\Sorter.csprojAssemblyReference.cache
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\obj\Debug\netcoreapp3.0\Sorter.AssemblyInfoInputs.cache
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\obj\Debug\netcoreapp3.0\Sorter.AssemblyInfo.cs
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\obj\Debug\netcoreapp3.0\Sorter.dll
+C:\Users\Ryan Walker\source\repos\Projects\Sorter\Sorter\obj\Debug\netcoreapp3.0\Sorter.pdb
