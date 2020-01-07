@@ -8,22 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
 
 namespace Assignment_1
 {
-    public struct User
-    {
-        public string username, password;
-        public bool admin;
-
-        public User (string username, string password = "", bool admin = false)
-        {
-            this.username = username;
-            this.password = password;
-            this.admin = admin;
-        }
-    }
-
     public partial class frmLogin : Form
     {
         public List<User> users = new List<User>();
@@ -32,15 +20,17 @@ namespace Assignment_1
         {
             InitializeComponent();
 
+
+            //test();
             ReadUsers();
-            //ListUserData(users);
+            ListUserData(users);
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             // Creates an account and logs into that account if the username and password are valid
             User newUser = new User(txtUsername.Text, txtPassword.Text);
-            if (Program.ValidateUserLogin(newUser, users))
+            if (newUser.ValidateUserLogin(users))
             {
                 newUser.password = Program.EncryptString(newUser.password);
                 users.Add(newUser);
@@ -80,9 +70,34 @@ namespace Assignment_1
 
             // Searches each line until it finds ~ marking a users data then writes each consecutive line to each user property then adds them to the list
             using (StreamReader sr = new StreamReader("Users.txt"))
+            {
                 while (sr.Peek() > -1)
+                {
                     if (sr.ReadLine() == "~")
-                        users.Add(new User(sr.ReadLine(), sr.ReadLine(), Convert.ToBoolean(sr.ReadLine())));
+                    {
+                        User user = new User("");
+
+                        FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+                        foreach (FieldInfo info in fi)
+                        {
+                            string flag = sr.ReadLine();
+                            if (flag == "~")
+                                break;
+                            if (flag != info.Name)
+                                continue;
+
+                            string value = sr.ReadLine().ToString();
+                            switch (Type.GetTypeCode(info.FieldType))
+                            {
+                                case TypeCode.Boolean: info.SetValue(user, Convert.ToBoolean(value)); break;
+                                default: info.SetValue(user, value); break;
+                            }
+                        }
+
+                        users.Add(user);
+                    }
+                }
+            }
         }
 
         void WriteUsers()
@@ -95,6 +110,7 @@ namespace Assignment_1
                     sw.WriteLine("~");
                     sw.WriteLine(user.username);
                     sw.WriteLine(user.password);
+                    sw.WriteLine(user.bio);
                     sw.WriteLine(user.admin);
                 }
             }
@@ -111,6 +127,35 @@ namespace Assignment_1
                 userList += "Admin: " + user.admin.ToString() + "\n\n";
             }
             MessageBox.Show(userList);
+        }
+
+        void test()
+        {
+            User ryan = new User("ryan", "password123")
+            {
+                bio = "bio text",
+                admin = true
+            };
+
+
+
+
+
+
+
+
+
+
+
+
+            FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+            foreach(FieldInfo info in fi)
+            {
+                if (info.Name == "password")
+                    continue;
+                MessageBox.Show(info.Name + ": " + info.GetValue(ryan));
+
+            }
         }
     }
 }

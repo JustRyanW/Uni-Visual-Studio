@@ -6,12 +6,41 @@ using System.Windows.Forms;
 
 namespace Assignment_1
 {
+    public class User
+    {
+        public string username, password, bio;
+        public bool admin;
+
+        public User(string username, string password = "")
+        {
+            this.username = username;
+            this.password = password;
+        }
+
+        public bool ValidateUserLogin(List<User> users)
+        {
+            if (Program.FindUser(users, username))
+                MessageBox.Show("This username is already taken");
+            else if (username.Length < 4)
+                MessageBox.Show("Username must be more than 4 characters");
+            else if (password.Length < 4)
+                MessageBox.Show("Password must be more than 4 characters");
+            else if (password == username)
+                MessageBox.Show("Your password must be different from your username");
+            else
+                return true;
+            return false;
+        }
+    }
+
     static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
         static void Main()
         {
             if (Environment.OSVersion.Version.Major >= 6)
@@ -20,24 +49,6 @@ namespace Assignment_1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
-        }
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool SetProcessDPIAware();
-
-        public static bool ValidateUserLogin(User userLogin, List<User> users)
-        {
-            if (FindUser(users, userLogin.username))
-                MessageBox.Show("This username is already taken");
-            else if (userLogin.username.Length < 4)
-                MessageBox.Show("Username must be more than 4 characters");
-            else if (userLogin.password.Length < 4)
-                MessageBox.Show("Password must be more than 4 characters");
-            else if (userLogin.password == userLogin.username)
-                MessageBox.Show("Your password must be different from your username");
-            else
-                return true;
-            return false;
         }
 
         public static bool FindUser(List<User> users, string username, out User foundUser)

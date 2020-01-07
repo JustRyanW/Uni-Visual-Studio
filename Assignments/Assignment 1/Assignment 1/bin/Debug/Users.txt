@@ -1,4 +1,9 @@
-~
+﻿~
+username
 ryan
-ÔÅ××ÛÓÖÈ
+password
+password
+bio
+this is a bio
+admin
 True
