@@ -12,9 +12,16 @@ namespace Assignment_1
 {
     public partial class frmMenu : Form
     {
-        public frmMenu()
+        User user;
+        public List<User> users = new List<User>();
+
+        public frmMenu(User user, List<User> users)
         {
             InitializeComponent();
+            this.user = user;
+            this.users = users;
+
+            lblUsername.Text = user.username;
         }
     }
 }
