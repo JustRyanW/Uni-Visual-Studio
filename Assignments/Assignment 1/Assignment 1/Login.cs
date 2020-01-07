@@ -23,7 +23,9 @@ namespace Assignment_1
             InitializeComponent();
 
             ReadUsers();
-            //ListUserData(users);
+
+            Program.SortUsers(ref users);
+            ListUserData(users);
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -118,7 +120,7 @@ namespace Assignment_1
             }
         }
 
-        void ListUserData(List<User> users)
+        void ListUserData(List<User> users, bool showEmpty = false)
         {
             // Creates a list showing all the user data (for debug porpuses)
             string userList = "";
@@ -128,7 +130,8 @@ namespace Assignment_1
                 FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
                 foreach (FieldInfo info in fi)
                 {
-                    userList += info.Name + ": " + info.GetValue(user) + "\n";
+                    if (showEmpty || info.GetValue(user) != "")
+                        userList += info.Name + ": " + info.GetValue(user) + "\n";
                 }
                 userList += "\n";
             }

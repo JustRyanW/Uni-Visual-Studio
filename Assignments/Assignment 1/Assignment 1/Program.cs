@@ -83,5 +83,29 @@ namespace Assignment_1
             }
             return encryptedString;
         }
+
+        public static void SortUsers(ref List<User> users)
+        {
+            // Bubble Sort
+
+            User[] userList = users.ToArray();
+            bool sorting;
+            do
+            {
+                sorting = false;
+                for (int i = 1; i < userList.Length; i++)
+                {
+                    if (userList[i - 1].age < userList[i].age)
+                    {
+                        User temp = userList[i- 1];
+                        userList[i - 1] = userList[i];
+                        userList[i] = temp;
+                        sorting = true;
+                    }
+                }
+            } while (sorting);
+
+            users = userList.ToList();
+        }
     }
 }
