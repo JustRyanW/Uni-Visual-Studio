@@ -16,6 +16,9 @@ namespace Assignment_1
     {
         public List<User> users = new List<User>();
 
+
+        FieldInfo[] userFieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+
         public frmLogin()
         {
             InitializeComponent();
@@ -73,16 +76,18 @@ namespace Assignment_1
             {
                 while (sr.Peek() > -1)
                 {
-                    if (sr.ReadLine() == "~")
-                    {
-                        User user = new User("");
+                    string flag = sr.ReadLine();
+                    if (flag != "~")
+                        continue;
 
-                        FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
-                        foreach (FieldInfo info in fi)
+                    User user = new User("");
+                    users.Add(user);
+
+                    flag = sr.ReadLine();
+                    while (flag != "~" && sr.Peek() > -1)
+                    {
+                        foreach (FieldInfo info in userFieldInfo)
                         {
-                            string flag = sr.ReadLine();
-                            if (flag == "~")
-                                break;
                             if (flag != info.Name)
                                 continue;
 
@@ -92,9 +97,9 @@ namespace Assignment_1
                                 case TypeCode.Boolean: info.SetValue(user, Convert.ToBoolean(value)); break;
                                 default: info.SetValue(user, value); break;
                             }
+                            flag = sr.ReadLine();
+                            break;
                         }
-
-                        users.Add(user);
                     }
                 }
             }
@@ -115,47 +120,22 @@ namespace Assignment_1
                 }
             }
         }
-         
+
         void ListUserData(List<User> users)
         {
             // Creates a list showing all the user data (for debug porpuses)
             string userList = "";
             foreach (User user in users)
             {
-                userList += "Username: " + user.username + "\n";
-                userList += "Password: " + user.password + "\n";
-                userList += "Admin: " + user.admin.ToString() + "\n\n";
+                userList += "User:\n";
+                FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+                foreach (FieldInfo info in fi)
+                {
+                    userList += info.Name + ": " + info.GetValue(user) + "\n";
+                }
+                userList += "\n";
             }
             MessageBox.Show(userList);
-        }
-
-        void test()
-        {
-            User ryan = new User("ryan", "password123")
-            {
-                bio = "bio text",
-                admin = true
-            };
-
-
-
-
-
-
-
-
-
-
-
-
-            FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
-            foreach(FieldInfo info in fi)
-            {
-                if (info.Name == "password")
-                    continue;
-                MessageBox.Show(info.Name + ": " + info.GetValue(ryan));
-
-            }
         }
     }
 }
