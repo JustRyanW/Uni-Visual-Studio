@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtBio.Text" xml:space="preserve">
+    <value>Bio - This is a bio and this is a bio text, i am typing this to test the bio and how it works and how the text wraps. hoplefully this all works fine but im sure it wont and ill need to change something again... ahhh the life of being a developer</value>
+  </data>
 </root>

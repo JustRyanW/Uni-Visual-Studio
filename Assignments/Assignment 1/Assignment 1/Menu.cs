@@ -21,7 +21,18 @@ namespace Assignment_1
             this.user = user;
             this.users = users;
 
-            lblUsername.Text = user.username;
+            txtUsername.Text = user.username;
+            //txtBio.Text = user.bio;
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

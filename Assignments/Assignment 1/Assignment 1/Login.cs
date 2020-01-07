@@ -33,40 +33,27 @@ namespace Assignment_1
             InitializeComponent();
 
             ReadUsers();
-            ListUserData(users);
+            //ListUserData(users);
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            // Creates an account and logs into that account if the username and password meet the criteria
+            // Creates an account and logs into that account if the username and password are valid
             User newUser = new User(txtUsername.Text, txtPassword.Text);
-            if (!FindUser(ref newUser))
+            if (Program.ValidateUserLogin(newUser, users))
             {
-                if (newUser.username.Length < 4)
-                    MessageBox.Show("Username must be more than 4 characters");
-                else if (newUser.password.Length < 4)
-                    MessageBox.Show("Password must be more than 4 characters");
-                else if (newUser.password == newUser.username)
-                    MessageBox.Show("Your password must be different from your username");
-                else
-                {
-                    newUser.password = EncryptString(newUser.password);
-                    users.Add(newUser);
-                    Login(newUser);
-                }
+                newUser.password = Program.EncryptString(newUser.password);
+                users.Add(newUser);
+                Login(newUser);
             }
-            else
-                MessageBox.Show("This username is already taken");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Logs in if the username/password is valid
-            User userLookup = new User(txtUsername.Text);
-            if (FindUser(ref userLookup))
+            if (Program.FindUser(users, txtUsername.Text, out User userLookup))
             {
-                User userLogin = new User(txtUsername.Text, EncryptString(txtPassword.Text));
-                if (userLogin.password == userLookup.password)
+                if (EncryptString(txtPassword.Text) == userLookup.password)
                     Login(userLookup);
                 else
                     MessageBox.Show("Incorrect password");
@@ -84,32 +71,6 @@ namespace Assignment_1
             Hide();
             frmMenu menu = new frmMenu(user, users);
             menu.ShowDialog();
-        }
-
-        string EncryptString(string str)
-        {
-            // Offsets all characters in the string by +100 in the unicode space
-            string encryptedString = "";
-            foreach (char c in str)
-            {
-                encryptedString += (char)((c + 100) % 65535);
-            }
-            return encryptedString;
-        }
-
-        bool FindUser(ref User userLogin)
-        {
-            // Returns true if it finds a user with the same name as the userLogin reference parameter then updates it with the users data
-            bool userExists = false;
-            foreach(User user in users)
-            {
-                if (userLogin.username == user.username)
-                {
-                    userLogin = user;
-                    userExists = true;
-                }
-            }
-            return userExists;
         }
 
         void ReadUsers()
