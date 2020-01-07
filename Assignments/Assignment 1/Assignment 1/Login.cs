@@ -53,7 +53,7 @@ namespace Assignment_1
             // Logs in if the username/password is valid
             if (Program.FindUser(users, txtUsername.Text, out User userLookup))
             {
-                if (EncryptString(txtPassword.Text) == userLookup.password)
+                if (Program.EncryptString(txtPassword.Text) == userLookup.password)
                     Login(userLookup);
                 else
                     MessageBox.Show("Incorrect password");
