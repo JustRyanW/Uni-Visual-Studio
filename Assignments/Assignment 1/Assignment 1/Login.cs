@@ -29,10 +29,10 @@ namespace Assignment_1
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             // Creates an account and logs into that account if the username and password are valid
-            User newUser = new User(txtUsername.Text, txtPassword.Text);
+            User newUser = new User(txtUsername.Text);
             if (newUser.ValidateUserLogin(users))
             {
-                newUser.password = Program.EncryptString(newUser.password);
+                newUser.password = Program.EncryptString(txtPassword.Text);
                 users.Add(newUser);
                 Login(newUser);
             }
@@ -90,6 +90,7 @@ namespace Assignment_1
 
                             switch (Type.GetTypeCode(info.FieldType))
                             {
+                                case TypeCode.Int32: info.SetValue(user, Convert.ToInt32(value)); break;
                                 case TypeCode.Boolean: info.SetValue(user, Convert.ToBoolean(value)); break;
                                 default: info.SetValue(user, value); break;
                             }

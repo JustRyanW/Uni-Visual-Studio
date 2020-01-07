@@ -8,13 +8,13 @@ namespace Assignment_1
 {
     public class User
     {
-        public string username, password, bio;
-        public bool admin;
+        public string username, password, bio, gender, firstName, LastName, email;
+        public bool isAdmin;
+        public int age;
 
-        public User(string username, string password = "")
+        public User(string username)
         {
             this.username = username;
-            this.password = password;
         }
 
         public bool ValidateUserLogin(List<User> users)

@@ -5,8 +5,18 @@ password
 ÔÅ××ÛÓÖÈ
 bio
 I am a bio!
-admin
+gender
+Male
+firstName
+
+LastName
+
+email
+
+isAdmin
 False
+age
+18
 ~
 username
 admin
@@ -14,8 +24,18 @@ password
 ÔÅ××ÛÓÖÈ
 bio
 
-admin
+gender
+Male
+firstName
+
+LastName
+
+email
+
+isAdmin
 False
+age
+0
 ~
 username
 dan123
@@ -23,8 +43,18 @@ password
 ÈÅÒ
 bio
 
-admin
+gender
+Male
+firstName
+
+LastName
+
+email
+
+isAdmin
 False
+age
+0
 ~
 username
 jack
@@ -32,5 +62,15 @@ password
 ÐÉÚÍØØ
 bio
 
-admin
+gender
+Male
+firstName
+
+LastName
+
+email
+
+isAdmin
 False
+age
+0
