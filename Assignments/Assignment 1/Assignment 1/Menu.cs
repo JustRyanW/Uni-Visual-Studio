@@ -22,7 +22,7 @@ namespace Assignment_1
             this.users = users;
 
             txtUsername.Text = user.username;
-            //txtBio.Text = user.bio;
+            txtBio.Text = user.bio;
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)

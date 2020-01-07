@@ -16,17 +16,14 @@ namespace Assignment_1
     {
         public List<User> users = new List<User>();
 
-
         FieldInfo[] userFieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
 
         public frmLogin()
         {
             InitializeComponent();
 
-
-            //test();
             ReadUsers();
-            ListUserData(users);
+            //ListUserData(users);
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -71,33 +68,31 @@ namespace Assignment_1
             if (!File.Exists("Users.txt"))
                 File.Create("Users.txt");
 
-            // Searches each line until it finds ~ marking a users data then writes each consecutive line to each user property then adds them to the list
+            // Uses ~ to find a new user and finds properites from the data afterwards
             using (StreamReader sr = new StreamReader("Users.txt"))
             {
+                string flag = sr.ReadLine();
                 while (sr.Peek() > -1)
                 {
-                    string flag = sr.ReadLine();
-                    if (flag != "~")
-                        continue;
-
                     User user = new User("");
                     users.Add(user);
 
-                    flag = sr.ReadLine();
-                    while (flag != "~" && sr.Peek() > -1)
+                    while (true)
                     {
+                        flag = sr.ReadLine();
+                        if (flag == "~" || sr.Peek() == -1)
+                            break;
+                        string value = sr.ReadLine().ToString();
                         foreach (FieldInfo info in userFieldInfo)
                         {
                             if (flag != info.Name)
                                 continue;
 
-                            string value = sr.ReadLine().ToString();
                             switch (Type.GetTypeCode(info.FieldType))
                             {
                                 case TypeCode.Boolean: info.SetValue(user, Convert.ToBoolean(value)); break;
                                 default: info.SetValue(user, value); break;
                             }
-                            flag = sr.ReadLine();
                             break;
                         }
                     }
@@ -107,16 +102,17 @@ namespace Assignment_1
 
         void WriteUsers()
         {
-            // Writes all the data from each user into the Users file. Uses ~ to indicate the start of the next user data
+            // Writes all the data from each user into the Users file. Uses ~ to indicate the start and end of the user data
             using (StreamWriter sw = new StreamWriter("Users.txt"))
             {
                 foreach (User user in users)
                 {
                     sw.WriteLine("~");
-                    sw.WriteLine(user.username);
-                    sw.WriteLine(user.password);
-                    sw.WriteLine(user.bio);
-                    sw.WriteLine(user.admin);
+                    foreach (FieldInfo info in userFieldInfo)
+                    {
+                        sw.WriteLine(info.Name);
+                        sw.WriteLine(info.GetValue(user));
+                    }
                 }
             }
         }
