@@ -1,4 +1,4 @@
-~
+﻿~
 username
 admin
 password
@@ -6,7 +6,7 @@ password
 bio
 
 gender
-Male
+
 firstName
 
 LastName
@@ -33,7 +33,7 @@ LastName
 email
 
 isAdmin
-False
+True
 age
 18
 ~
@@ -44,7 +44,7 @@ password
 bio
 
 gender
-Male
+
 firstName
 
 LastName
@@ -52,7 +52,7 @@ LastName
 email
 
 isAdmin
-False
+True
 age
 16
 ~
@@ -63,7 +63,7 @@ password
 bio
 
 gender
-Male
+
 firstName
 
 LastName

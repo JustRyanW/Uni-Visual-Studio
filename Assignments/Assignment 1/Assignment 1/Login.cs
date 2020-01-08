@@ -16,16 +16,11 @@ namespace Assignment_1
     {
         public List<User> users = new List<User>();
 
-        FieldInfo[] userFieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
-
         public frmLogin()
         {
             InitializeComponent();
 
             ReadUsers();
-
-            Program.SortUsers(ref users);
-            ListUserData(users);
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -85,7 +80,7 @@ namespace Assignment_1
                         if (flag == "~" || sr.Peek() == -1)
                             break;
                         string value = sr.ReadLine().ToString();
-                        foreach (FieldInfo info in userFieldInfo)
+                        foreach (FieldInfo info in User.fieldInfo)
                         {
                             if (flag != info.Name)
                                 continue;
@@ -111,7 +106,7 @@ namespace Assignment_1
                 foreach (User user in users)
                 {
                     sw.WriteLine("~");
-                    foreach (FieldInfo info in userFieldInfo)
+                    foreach (FieldInfo info in User.fieldInfo)
                     {
                         sw.WriteLine(info.Name);
                         sw.WriteLine(info.GetValue(user));
@@ -126,11 +121,11 @@ namespace Assignment_1
             string userList = "";
             foreach (User user in users)
             {
-                userList += "User:\n";
+                userList += "User\n";
                 FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
                 foreach (FieldInfo info in fi)
                 {
-                    if (showEmpty || info.GetValue(user) != "")
+                    if (showEmpty || info.GetValue(user) != String.Empty)
                         userList += info.Name + ": " + info.GetValue(user) + "\n";
                 }
                 userList += "\n";
