@@ -13,7 +13,6 @@ namespace Assignment_1
     public partial class frmMenu : Form
     {
         User user = UserManager.user;
-
         public frmMenu()
         {
             InitializeComponent();
@@ -26,15 +25,10 @@ namespace Assignment_1
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (user.Validate())
+            if (user.ValidateAndAssign(txtUsername.Text, txtBio.Text, txtAge.Text))
             {
-                user.username = txtUsername.Text;
-                user.age = Convert.ToInt32(txtAge.Text);
-                user.gender = cbxGender.SelectedIndex;
-                user.bio = txtBio.Text;
-
-                UserManager.ListUserData();
                 UserManager.WriteUsers();
+                UserManager.ListUserData();
             }
         }
     }

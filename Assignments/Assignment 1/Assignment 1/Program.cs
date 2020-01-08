@@ -30,9 +30,31 @@ namespace Assignment_1
             else if (password.Length < 4)
                 MessageBox.Show("Password must be more than 4 characters");
             else if (password == username || password == UserManager.Encrypt(username))
-                MessageBox.Show("Your password must be different from your username");
+                MessageBox.Show("Your username and password must be different");
             else
                 return true;
+            return false;
+        }
+    
+        public bool ValidateAndAssign(string username, string bio, string age)
+        {
+            int iAge;
+
+            if (!Int32.TryParse(age, out iAge))
+                MessageBox.Show("Age is not valid");
+            else if (UserManager.FindUser(username))
+                MessageBox.Show("This username is already taken");
+            else if (username.Length < 4)
+                MessageBox.Show("Username must be more than 4 characters");
+            else if (password == username || password == UserManager.Encrypt(username))
+                MessageBox.Show("Your password must be different from your username");
+            else
+            {
+                this.username = username;
+                this.bio = bio;
+                this.age = iAge;
+                return true;
+            }
             return false;
         }
     }

@@ -16,10 +16,10 @@ namespace Assignment_1
         {
             InitializeComponent();
 
-
             UserManager.ReadUsers();
+
             //UserManager.SortUsers(User.fieldInfo[8]);
-            UserManager.ListUserData();
+            //UserManager.ListUserData();
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
