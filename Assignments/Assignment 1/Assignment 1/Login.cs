@@ -24,7 +24,7 @@ namespace Assignment_1
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            if(UserManager.CreateUser(txtUsername.Text, txtPassword.Text));
+            if(UserManager.CreateUser(txtUsername.Text, txtPassword.Text))
                 Login();
         }
 
