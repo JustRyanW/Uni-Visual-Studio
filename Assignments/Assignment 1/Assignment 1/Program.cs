@@ -12,78 +12,48 @@ namespace Assignment_1
     {
         public static FieldInfo[] fieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
 
-        public string username, password, bio, gender, firstName, LastName, email;
+        public string username, password, bio, firstName, LastName, email;
         public bool isAdmin;
-        public int id, age;
+        public int id, age, gender;
 
         public User(int id)
         {
             this.id = id;
         }
 
-        public static bool ValidateUserLogin(List<User> users, string username, string password)
+        public bool Validate()
         {
-            // Checks if the username and password fit the criteria and returns true if it does
-            if (ValidateUsername(users, username) && ValidatePassword(password))
-                if (password == username)
-                    MessageBox.Show("Your password must be different from your username");
-                else
-                    return true;
-            return false;
-        }
-
-        public static bool ValidateUsername(List<User> users, string username)
-        {
-            if (Program.FindUser(users, username))
+            if (UserManager.FindUser(username))
                 MessageBox.Show("This username is already taken");
             else if (username.Length < 4)
                 MessageBox.Show("Username must be more than 4 characters");
-            else
-                return true;
-            return false;
-        }
-
-        public static bool ValidatePassword(string password)
-        {
-            if (password.Length < 4)
+            else if (password.Length < 4)
                 MessageBox.Show("Password must be more than 4 characters");
+            else if (password == username || password == UserManager.Encrypt(username))
+                MessageBox.Show("Your password must be different from your username");
             else
                 return true;
             return false;
         }
     }
 
-    static class Program
+    public static class UserManager
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool SetProcessDPIAware();
+        public static List<User> users;
+        public static User user;
 
         private const int encryptionOffsetAmount = 100;
 
-        static void Main()
-        {
-            if (Environment.OSVersion.Version.Major >= 6)
-                SetProcessDPIAware();
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
-        }
-
-        public static bool FindUser(List<User> users, string username, out User foundUser)
+        public static bool FindUser(string username, out User foundUser)
         {
             // Returns true if it finds a user by a certian username and outputs the user to foundUser
             bool userExists = false;
             foundUser = new User(0);
-            foreach (User user in users)
+            foreach (User viewedUser in users)
             {
-                if (username == user.username)
+                if (viewedUser != user && viewedUser.username == username)
                 {
-                    foundUser = user;
+                    foundUser = viewedUser;
                     userExists = true;
                     break;
                 }
@@ -91,24 +61,13 @@ namespace Assignment_1
             return userExists;
         }
 
-        public static bool FindUser(List<User> users, string username)
+        public static bool FindUser(string username)
         {
             // Overrides the FindUser fucntion and disreards the user output
-            return FindUser(users, username, out _);
+            return FindUser(username, out _);
         }
 
-        public static string EncryptString(string str)
-        {
-            // Offsets all characters in the string by +100 in the unicode space
-            string encryptedString = "";
-            foreach (char c in str)
-            {
-                encryptedString += (char)((c + encryptionOffsetAmount) % 65535);
-            }
-            return encryptedString;
-        }
-
-        public static void SortUsers(ref List<User> users, FieldInfo field, bool reversed = false)
+        public static void SortUsers(FieldInfo field, bool reversed = false)
         {
             // Bubble Sort
 
@@ -145,7 +104,7 @@ namespace Assignment_1
                 users.Reverse();
         }
 
-        public static bool SwapUsers(ref User userA, ref User userB)
+        private static bool SwapUsers(ref User userA, ref User userB)
         {
             // Swaps 2 users positions
             User temp = userA;
@@ -154,7 +113,7 @@ namespace Assignment_1
             return true;
         }
 
-        public static void WriteUsers(List<User> users)
+        public static void WriteUsers()
         {
             // Writes all the data from each user into the Users file. Uses "~" to indicate the start user data
             using (StreamWriter sw = new StreamWriter("Users.txt"))
@@ -173,7 +132,7 @@ namespace Assignment_1
             }
         }
 
-        public static void ReadUsers(out List<User> users)
+        public static void ReadUsers()
         {
             // Creates a file if one doesnt exist
             if (!File.Exists("Users.txt"))
@@ -219,5 +178,89 @@ namespace Assignment_1
                 }
             }
         }
+
+        public static void ListUserData(bool showEmpty = false)
+        {
+            // Creates a list showing all the user data (for debug porpuses)
+            string userList = "";
+            foreach (User user in users)
+            {
+                userList += "User\n";
+                FieldInfo[] fi = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+                foreach (FieldInfo info in fi)
+                {
+                    if (showEmpty || info.GetValue(user) != String.Empty)
+                        userList += info.Name + ": " + info.GetValue(user) + "\n";
+                }
+                userList += "\n";
+            }
+            MessageBox.Show(userList);
+        }
+
+        public static bool CreateUser(string username, string password)
+        {
+            // Creates an account if the username and password are valid
+            User newUser = new User(users.Count);
+            newUser.username = username;
+            newUser.password = Encrypt(password);
+            if (newUser.Validate())
+            {
+                users.Add(newUser);
+                user = newUser;
+                UserManager.WriteUsers();
+                return true;
+            }
+            return false;
+        }
+
+        public static bool Login(string username, string password)
+        {
+            // Logs in if the username/password is valid
+            if (FindUser(username, out User userLookup))
+            {
+                if (Encrypt(password) == userLookup.password)
+                {
+                    user = userLookup;
+                    return true;
+                }
+                else
+                    MessageBox.Show("Incorrect password");
+            }
+            else
+                MessageBox.Show("No user by this name found");
+            return false;
+        }
+
+        public static string Encrypt(string str)
+        {
+            // Offsets all characters in the string by +100 in the unicode space
+            string encryptedString = "";
+            foreach (char c in str)
+            {
+                encryptedString += (char)((c + encryptionOffsetAmount) % 65535);
+            }
+            return encryptedString;
+        }
+    }
+
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+
+        static void Main()
+        {
+            if (Environment.OSVersion.Version.Major >= 6)
+                SetProcessDPIAware();
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmLogin());
+        }
+
     }
 }

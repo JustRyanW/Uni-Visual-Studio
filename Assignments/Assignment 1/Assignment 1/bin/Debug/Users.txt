@@ -4,9 +4,7 @@ ryan
 password
 ÔÅ××ÛÓÖÈ
 bio
-
-gender
-
+welcome to my profile!
 firstName
 
 LastName
@@ -18,4 +16,6 @@ False
 id
 0
 age
-0
+18
+gender
+1

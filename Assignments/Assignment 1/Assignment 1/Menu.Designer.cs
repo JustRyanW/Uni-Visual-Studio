@@ -35,10 +35,9 @@
             this.lblBio = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cbxGender = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,11 +59,9 @@
             this.txtBio.Margin = new System.Windows.Forms.Padding(6);
             this.txtBio.Multiline = true;
             this.txtBio.Name = "txtBio";
-            this.txtBio.ReadOnly = true;
             this.txtBio.Size = new System.Drawing.Size(470, 268);
             this.txtBio.TabIndex = 3;
             this.txtBio.Text = resources.GetString("txtBio.Text");
-            this.txtBio.TextChanged += new System.EventHandler(this.txtBio_TextChanged);
             // 
             // txtUsername
             // 
@@ -72,11 +69,9 @@
             this.txtUsername.Location = new System.Drawing.Point(155, 15);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(6);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(470, 68);
             this.txtUsername.TabIndex = 5;
             this.txtUsername.Text = "Username";
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblBio
             // 
@@ -106,21 +101,9 @@
             this.txtAge.Location = new System.Drawing.Point(254, 99);
             this.txtAge.Margin = new System.Windows.Forms.Padding(6);
             this.txtAge.Name = "txtAge";
-            this.txtAge.ReadOnly = true;
             this.txtAge.Size = new System.Drawing.Size(52, 44);
             this.txtAge.TabIndex = 7;
             this.txtAge.Text = "18";
-            // 
-            // txtGender
-            // 
-            this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender.Location = new System.Drawing.Point(469, 99);
-            this.txtGender.Margin = new System.Windows.Forms.Padding(6);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.ReadOnly = true;
-            this.txtGender.Size = new System.Drawing.Size(156, 44);
-            this.txtGender.TabIndex = 8;
-            this.txtGender.Text = "Male";
             // 
             // lblGender
             // 
@@ -133,35 +116,37 @@
             this.lblGender.TabIndex = 9;
             this.lblGender.Text = "Gender:";
             // 
-            // btnLogout
+            // btnSave
             // 
-            this.btnLogout.Location = new System.Drawing.Point(175, 496);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(431, 227);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnSave.Location = new System.Drawing.Point(634, 15);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(131, 68);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnEdit
+            // cbxGender
             // 
-            this.btnEdit.Location = new System.Drawing.Point(634, 15);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(131, 68);
-            this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.cbxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxGender.FormattingEnabled = true;
+            this.cbxGender.Items.AddRange(new object[] {
+            "Other",
+            "Male",
+            "Female"});
+            this.cbxGender.Location = new System.Drawing.Point(466, 101);
+            this.cbxGender.Name = "cbxGender";
+            this.cbxGender.Size = new System.Drawing.Size(159, 45);
+            this.cbxGender.TabIndex = 12;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 804);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.cbxGender);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblGender);
-            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.txtUsername);
@@ -183,9 +168,8 @@
         private System.Windows.Forms.Label lblBio;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.TextBox txtAge;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cbxGender;
     }
 }

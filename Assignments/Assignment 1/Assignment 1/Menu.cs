@@ -12,64 +12,30 @@ namespace Assignment_1
 {
     public partial class frmMenu : Form
     {
-        User user;
-        public List<User> users = new List<User>();
+        User user = UserManager.user;
 
-        bool isEditMode = false;
-
-        public frmMenu(User user, List<User> users)
+        public frmMenu()
         {
             InitializeComponent();
-            this.user = user;
-            this.users = users;
 
             txtUsername.Text = user.username;
             txtBio.Text = user.bio;
-            txtGender.Text = user.gender;
+            cbxGender.SelectedIndex = user.gender;
             txtAge.Text = user.age.ToString();
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtBio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            Hide();
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (isEditMode)
+            if (user.Validate())
             {
-                if (User.ValidateUsername(users, txtUsername.Text))
-                {
+                user.username = txtUsername.Text;
+                user.age = Convert.ToInt32(txtAge.Text);
+                user.gender = cbxGender.SelectedIndex;
+                user.bio = txtBio.Text;
 
-                    btnEdit.Text = "Edit";
-                    isEditMode = false;
-                }
+                UserManager.ListUserData();
+                UserManager.WriteUsers();
             }
-            else
-            {
-                users.Add(user);
-                Program.WriteUsers(users);
-                users.Remove(user);
-
-                btnEdit.Text = "Save";
-                isEditMode = true;
-            }
-            txtUsername.ReadOnly = !isEditMode;
-            txtAge.ReadOnly = !isEditMode;
-            txtGender.ReadOnly = !isEditMode;
-            txtBio.ReadOnly = !isEditMode;
         }
     }
 }
