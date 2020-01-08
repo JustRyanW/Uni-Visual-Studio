@@ -20,15 +20,19 @@ namespace Assignment_1
         {
             InitializeComponent();
 
-            ReadUsers();
+
+            Program.ReadUsers(out users);
+            //Program.SortUsers(ref users, User.fieldInfo[8]);
+            //ListUserData(users);
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             // Creates an account and logs into that account if the username and password are valid
-            User newUser = new User(txtUsername.Text);
-            if (newUser.ValidateUserLogin(users))
+            if (User.ValidateUserLogin(users, txtUsername.Text, txtPassword.Text))
             {
+                User newUser = new User(users.Count);
+                newUser.username = txtUsername.Text;
                 newUser.password = Program.EncryptString(txtPassword.Text);
                 users.Add(newUser);
                 Login(newUser);
@@ -52,67 +56,12 @@ namespace Assignment_1
         void Login(User user)
         {
             // move to quit
-            WriteUsers();
+            Program.WriteUsers(users);
 
             users.Remove(user);
             Hide();
             frmMenu menu = new frmMenu(user, users);
             menu.ShowDialog();
-        }
-
-        void ReadUsers()
-        {
-            if (!File.Exists("Users.txt"))
-                File.Create("Users.txt");
-
-            // Uses ~ to find a new user and finds properites from the data afterwards
-            using (StreamReader sr = new StreamReader("Users.txt"))
-            {
-                string flag = sr.ReadLine();
-                while (sr.Peek() > -1)
-                {
-                    User user = new User("");
-                    users.Add(user);
-
-                    while (true)
-                    {
-                        flag = sr.ReadLine();
-                        if (flag == "~" || sr.Peek() == -1)
-                            break;
-                        string value = sr.ReadLine().ToString();
-                        foreach (FieldInfo info in User.fieldInfo)
-                        {
-                            if (flag != info.Name)
-                                continue;
-
-                            switch (Type.GetTypeCode(info.FieldType))
-                            {
-                                case TypeCode.Int32: info.SetValue(user, Convert.ToInt32(value)); break;
-                                case TypeCode.Boolean: info.SetValue(user, Convert.ToBoolean(value)); break;
-                                default: info.SetValue(user, value); break;
-                            }
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        void WriteUsers()
-        {
-            // Writes all the data from each user into the Users file. Uses ~ to indicate the start and end of the user data
-            using (StreamWriter sw = new StreamWriter("Users.txt"))
-            {
-                foreach (User user in users)
-                {
-                    sw.WriteLine("~");
-                    foreach (FieldInfo info in User.fieldInfo)
-                    {
-                        sw.WriteLine(info.Name);
-                        sw.WriteLine(info.GetValue(user));
-                    }
-                }
-            }
         }
 
         void ListUserData(List<User> users, bool showEmpty = false)

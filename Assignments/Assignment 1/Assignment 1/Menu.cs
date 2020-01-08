@@ -15,6 +15,8 @@ namespace Assignment_1
         User user;
         public List<User> users = new List<User>();
 
+        bool isEditMode = false;
+
         public frmMenu(User user, List<User> users)
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace Assignment_1
 
             txtUsername.Text = user.username;
             txtBio.Text = user.bio;
+            txtGender.Text = user.gender;
+            txtAge.Text = user.age.ToString();
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -33,6 +37,39 @@ namespace Assignment_1
         private void txtBio_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (isEditMode)
+            {
+                if (User.ValidateUsername(users, txtUsername.Text))
+                {
+
+                    btnEdit.Text = "Edit";
+                    isEditMode = false;
+                }
+            }
+            else
+            {
+                users.Add(user);
+                Program.WriteUsers(users);
+                users.Remove(user);
+
+                btnEdit.Text = "Save";
+                isEditMode = true;
+            }
+            txtUsername.ReadOnly = !isEditMode;
+            txtAge.ReadOnly = !isEditMode;
+            txtGender.ReadOnly = !isEditMode;
+            txtBio.ReadOnly = !isEditMode;
         }
     }
 }

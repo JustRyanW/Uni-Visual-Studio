@@ -37,6 +37,8 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.txtGender = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,11 +133,33 @@
             this.lblGender.TabIndex = 9;
             this.lblGender.Text = "Gender:";
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(175, 496);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(431, 227);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(634, 15);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(131, 68);
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 804);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtAge);
@@ -161,5 +185,7 @@
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
