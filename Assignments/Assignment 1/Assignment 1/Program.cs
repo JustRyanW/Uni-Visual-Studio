@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
@@ -12,13 +11,20 @@ namespace Assignment_1
     {
         public static FieldInfo[] fieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
 
-        public string username, password, bio, firstName, LastName, email;
+        public string username, password, bio, firstName, lastName, email;
         public bool isAdmin;
         public int id, age, gender;
 
-        public User(int id)
+        public User(int id, string username, string password)
         {
             this.id = id;
+            this.username = username;
+            this.password = password;
+        }
+
+        public User ()
+        {
+            id = 0;
         }
 
         public bool Validate()
@@ -36,12 +42,12 @@ namespace Assignment_1
             return false;
         }
     
-        public bool ValidateAndAssign(string username, string bio, string age)
+        public bool ValidateAndAssign(string username, string bio, string firstName, string lastName, string email, int age, int gender)
         {
-            int iAge;
-
-            if (!Int32.TryParse(age, out iAge))
-                MessageBox.Show("Age is not valid");
+            if (age < 16)
+                MessageBox.Show("You must be 16 or over to use this system");
+            else if (age > 130)
+                MessageBox.Show("Please enter a valid age");
             else if (UserManager.FindUser(username))
                 MessageBox.Show("This username is already taken");
             else if (username.Length < 4)
@@ -52,11 +58,16 @@ namespace Assignment_1
             {
                 this.username = username;
                 this.bio = bio;
-                this.age = iAge;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.email = email;
+                this.age = age;
+                this.gender = gender;
                 return true;
             }
             return false;
         }
+    
     }
 
     public static class UserManager
@@ -70,7 +81,7 @@ namespace Assignment_1
         {
             // Returns true if it finds a user by a certian username and outputs the user to foundUser
             bool userExists = false;
-            foundUser = new User(0);
+            foundUser = new User();
             foreach (User viewedUser in users)
             {
                 if (viewedUser != user && viewedUser.username == username)
@@ -85,7 +96,7 @@ namespace Assignment_1
 
         public static bool FindUser(string username)
         {
-            // Overrides the FindUser fucntion and disreards the user output
+            // Overloads the FindUser fucntion and disregards the user output
             return FindUser(username, out _);
         }
 
@@ -137,11 +148,12 @@ namespace Assignment_1
 
         public static void WriteUsers()
         {
-            // Writes all the data from each user into the Users file. Uses "~" to indicate the start user data
+            // Writes all the data from each user into the Users file
             using (StreamWriter sw = new StreamWriter("Users.txt"))
             {
                 foreach (User user in users)
                 {
+                    //  Uses "~" to indicate the start of new user data
                     sw.WriteLine("~");
                     // Loops over each data field in the user class
                     foreach (FieldInfo info in User.fieldInfo)
@@ -169,7 +181,7 @@ namespace Assignment_1
                 while (sr.Peek() > -1)
                 {
                     // Creates user, adds them to the users list and starts reading for user data
-                    User user = new User(0);
+                    User user = new User();
                     users.Add(user);
 
                     while (true)
@@ -222,14 +234,12 @@ namespace Assignment_1
         public static bool CreateUser(string username, string password)
         {
             // Creates an account if the username and password are valid
-            User newUser = new User(users.Count);
-            newUser.username = username;
-            newUser.password = Encrypt(password);
+            User newUser = new User(users.Count, username, Encrypt(password));
             if (newUser.Validate())
             {
                 users.Add(newUser);
                 user = newUser;
-                UserManager.WriteUsers();
+                WriteUsers();
                 return true;
             }
             return false;
@@ -263,6 +273,17 @@ namespace Assignment_1
             }
             return encryptedString;
         }
+        
+    }
+
+    public static class FormManager
+    {
+        private static Form currentForm = new frmLogin();
+
+        public static void Run()
+        {
+            Application.Run(currentForm);
+        }
     }
 
     static class Program
@@ -272,17 +293,19 @@ namespace Assignment_1
         /// </summary>
         [STAThread]
         [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool SetProcessDPIAware();
+            private static extern bool SetProcessDPIAware();
+
 
         static void Main()
         {
+            UserManager.ReadUsers();
+
             if (Environment.OSVersion.Version.Major >= 6)
                 SetProcessDPIAware();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            FormManager.Run();
         }
-
     }
 }
