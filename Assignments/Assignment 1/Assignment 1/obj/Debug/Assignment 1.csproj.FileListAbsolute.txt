@@ -10,3 +10,4 @@ C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmProfileEdit.resources
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmProfile.resources
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmHome.resources
+C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmUsers.resources

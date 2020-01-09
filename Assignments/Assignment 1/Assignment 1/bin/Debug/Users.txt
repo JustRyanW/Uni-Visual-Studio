@@ -40,3 +40,24 @@ age
 18
 gender
 1
+~
+username
+dantheman
+password
+ÔÅ××ÛÓÖÈ
+bio
+dan the man
+firstName
+dan
+lastName
+
+email
+
+isAdmin
+False
+id
+2
+age
+18
+gender
+1

@@ -68,6 +68,14 @@ namespace Assignment_1
             return false;
         }
     
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+        }
+
     }
 
     public static class UserManager
