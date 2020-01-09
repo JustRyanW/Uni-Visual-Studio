@@ -14,7 +14,7 @@ namespace Assignment_1
     public partial class frmProfile : Form
     {
         bool popout;
-        static readonly string[] genders = { "Other", "Male", "Female" };
+        
 
         public frmProfile(User user, bool popout = false)
         {
@@ -27,7 +27,7 @@ namespace Assignment_1
             lblLastname.Text = user.lastName;
             lblEmail.Text = user.email;
             lblAge.Text = user.age.ToString();
-            lblGender.Text = genders[user.gender];
+            lblGender.Text = User.genders[user.gender];
 
             if (user == UserManager.user)
                 btnEdit.Visible = true;

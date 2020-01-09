@@ -11,3 +11,17 @@ C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmProfile.resources
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmHome.resources
 C:\Users\Ryan Walker\Documents\GitHub\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmUsers.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\bin\Debug\Assignment 1.exe.config
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\bin\Debug\Assignment 1.exe
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\bin\Debug\Assignment 1.pdb
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.csprojAssemblyReference.cache
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmHome.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmLogin.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmProfile.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmProfileEdit.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.Properties.Resources.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment_1.frmUsers.resources
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.csproj.GenerateResource.cache
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.csproj.CoreCompileInputs.cache
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.exe
+C:\Users\Ryan\Documents\Github\Uni-Visual-Studio\Assignments\Assignment 1\Assignment 1\obj\Debug\Assignment 1.pdb

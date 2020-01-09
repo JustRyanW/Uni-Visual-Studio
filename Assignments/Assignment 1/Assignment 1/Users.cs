@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment_1
@@ -19,6 +12,12 @@ namespace Assignment_1
             // Adds the users to the list and defines the property that should be displayed
             lsbUsers.DataSource = UserManager.users;
             lsbUsers.DisplayMember = "Username";
+
+            // 
+            cbxSort.DataSource = UserManager.sortKeys;
+            cbxSort.DisplayMember = "Name";
+
+            dgvList.DataSource = UserManager.users;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -35,9 +34,9 @@ namespace Assignment_1
             profile.ShowDialog();
         }
 
-        private void btnSort_Click(object sender, EventArgs e)
+        private void cbxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UserManager.SortUsers(User.fieldInfo[0], true);
+            UserManager.SortUsers((SortKey)cbxSort.SelectedItem);
             lsbUsers.DataSource = UserManager.users;
         }
     }

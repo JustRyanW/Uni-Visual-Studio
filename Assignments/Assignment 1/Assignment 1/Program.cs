@@ -7,9 +7,32 @@ using System.IO;
 
 namespace Assignment_1
 {
+    public class SortKey
+    {
+        public string name;
+        public FieldInfo field;
+        public bool reversed;
+
+        public SortKey(string name, FieldInfo field, bool reversed)
+        {
+            this.name = name;
+            this.field = field;
+            this.reversed = reversed;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+    }
+
     public class User
     {
-        public static FieldInfo[] fieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+        public static readonly FieldInfo[] fieldInfo = typeof(User).GetFields(BindingFlags.Public | BindingFlags.Instance);
+        public static readonly string[] genders = { "Other", "Male", "Female" };
 
         public string username, password, bio, firstName, lastName, email;
         public bool isAdmin;
@@ -70,10 +93,37 @@ namespace Assignment_1
     
         public string Username
         {
-            get
-            {
-                return username;
-            }
+            get { return username; }
+        }
+
+        public string Firstname
+        {
+            get { return firstName; }
+        }
+
+        public string Lastname
+        {
+            get { return lastName; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+        }
+
+        public int Age
+        {
+            get { return age; }
+        }
+
+        public string Gender
+        {
+            get { return genders[gender]; }
         }
 
     }
@@ -82,6 +132,13 @@ namespace Assignment_1
     {
         public static List<User> users;
         public static User user;
+
+        public static SortKey[] sortKeys = new SortKey[4] {
+            new SortKey("Username A-Z", typeof(User).GetField("username"), false),
+            new SortKey("Username Z-A", typeof(User).GetField("username"), true),
+            new SortKey("Age Ascending", typeof(User).GetField("id"), true),
+            new SortKey("Age Descending", typeof(User).GetField("id"), false)
+        };
 
         private const int encryptionOffsetAmount = 100;
 
@@ -108,7 +165,7 @@ namespace Assignment_1
             return FindUser(username, out _);
         }
 
-        public static void SortUsers(FieldInfo field, bool reversed = false)
+        public static void SortUsers(SortKey sortKey)
         {
             // Bubble Sort
 
@@ -122,18 +179,18 @@ namespace Assignment_1
                 for (int i = 1; i < userList.Length; i++)
                 {
                     // Sorts differently depending on the variable type of the field it is sorting by
-                    switch (Type.GetTypeCode(field.FieldType))
+                    switch (Type.GetTypeCode(sortKey.field.FieldType))
                     {
                         case TypeCode.Int32:
-                            if ((int)field.GetValue(userList[i - 1]) < (int)field.GetValue(userList[i]))
+                            if ((int)sortKey.field.GetValue(userList[i - 1]) < (int)sortKey.field.GetValue(userList[i]))
                                 sorting = SwapUsers(ref userList[i - 1], ref userList[i]);
                             break;
                         case TypeCode.Boolean:
-                            if (!(bool)field.GetValue(userList[i - 1]) && (bool)field.GetValue(userList[i]))
+                            if (!(bool)sortKey.field.GetValue(userList[i - 1]) && (bool)sortKey.field.GetValue(userList[i]))
                                 sorting = SwapUsers(ref userList[i - 1], ref userList[i]);
                             break;
                         case TypeCode.String:
-                            if (String.Compare((string)field.GetValue(userList[i - 1]), (string)field.GetValue(userList[i])) < 0)
+                            if (String.Compare((string)sortKey.field.GetValue(userList[i - 1]), (string)sortKey.field.GetValue(userList[i])) > 0)
                                 sorting = SwapUsers(ref userList[i - 1], ref userList[i]);
                             break;
                     }
@@ -141,7 +198,7 @@ namespace Assignment_1
             } while (sorting);
 
             users = userList.ToList();
-            if (reversed)
+            if (sortKey.reversed)
                 users.Reverse();
         }
 
