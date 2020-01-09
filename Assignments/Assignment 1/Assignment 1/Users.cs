@@ -27,5 +27,18 @@ namespace Assignment_1
             frmHome home = new frmHome();
             home.ShowDialog();
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            User selectedUser = (User)lsbUsers.SelectedItem;
+            frmProfile profile = new frmProfile(selectedUser, true);
+            profile.ShowDialog();
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            UserManager.SortUsers(User.fieldInfo[0], true);
+            lsbUsers.DataSource = UserManager.users;
+        }
     }
 }

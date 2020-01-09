@@ -13,12 +13,14 @@ namespace Assignment_1
 {
     public partial class frmProfile : Form
     {
+        bool popout;
         static readonly string[] genders = { "Other", "Male", "Female" };
 
-        public frmProfile(User user)
+        public frmProfile(User user, bool popout = false)
         {
             InitializeComponent();
 
+            this.popout = popout;
             lblUsername.Text = user.username;
             txtBio.Text = user.bio;
             lblFirstname.Text = user.firstName;
@@ -42,9 +44,14 @@ namespace Assignment_1
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Hide();
-            frmHome home = new frmHome();
-            home.ShowDialog();
+            if (popout)
+                Close();
+            else
+            {
+                Hide();
+                frmHome home = new frmHome();
+                home.ShowDialog();
+            } 
         }
     }
 }
