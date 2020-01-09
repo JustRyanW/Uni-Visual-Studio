@@ -16,7 +16,7 @@ namespace Assignment_1
             if(UserManager.CreateUser(txtUsername.Text, txtPassword.Text))
             {
                 Hide();
-                frmProfileEdit profileEdit = new frmProfileEdit();
+                frmProfileEdit profileEdit = new frmProfileEdit(UserManager.user);
                 profileEdit.ShowDialog();
             }
         }

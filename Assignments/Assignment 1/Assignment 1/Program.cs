@@ -52,7 +52,7 @@ namespace Assignment_1
 
         public bool Validate()
         {
-            if (UserManager.FindUser(username))
+            if (UserManager.FindUser(username, this))
                 MessageBox.Show("This username is already taken");
             else if (username.Length < 4)
                 MessageBox.Show("Username must be more than 4 characters");
@@ -71,7 +71,7 @@ namespace Assignment_1
                 MessageBox.Show("You must be 16 or over to use this system");
             else if (age > 130)
                 MessageBox.Show("Please enter a valid age");
-            else if (UserManager.FindUser(username))
+            else if (UserManager.FindUser(username, this))
                 MessageBox.Show("This username is already taken");
             else if (username.Length < 4)
                 MessageBox.Show("Username must be more than 4 characters");
@@ -96,6 +96,11 @@ namespace Assignment_1
             get { return username; }
         }
 
+        public int Id
+        {
+            get { return id; }
+        }
+
         public string Firstname
         {
             get { return firstName; }
@@ -111,11 +116,6 @@ namespace Assignment_1
             get { return email; }
         }
 
-        public int Id
-        {
-            get { return id; }
-        }
-
         public int Age
         {
             get { return age; }
@@ -126,6 +126,10 @@ namespace Assignment_1
             get { return genders[gender]; }
         }
 
+        public bool Admin
+        {
+            get { return isAdmin; }
+        }
     }
 
     public static class UserManager
@@ -133,16 +137,24 @@ namespace Assignment_1
         public static List<User> users;
         public static User user;
 
-        public static SortKey[] sortKeys = new SortKey[4] {
+        public static SortKey[] sortKeys = new SortKey[] {
             new SortKey("Username A-Z", typeof(User).GetField("username"), false),
             new SortKey("Username Z-A", typeof(User).GetField("username"), true),
-            new SortKey("Age Ascending", typeof(User).GetField("id"), true),
-            new SortKey("Age Descending", typeof(User).GetField("id"), false)
+            new SortKey("Id Ascending", typeof(User).GetField("id"), false),
+            new SortKey("Id Descending", typeof(User).GetField("id"), true),
+            new SortKey("Firstname A-Z", typeof(User).GetField("firstName"), false),
+            new SortKey("Firstname Z-A", typeof(User).GetField("firstName"), true),
+            new SortKey("Lastname A-Z", typeof(User).GetField("lastName"), false),
+            new SortKey("Lastname Z-A", typeof(User).GetField("lastName"), true),
+            new SortKey("Age Ascending", typeof(User).GetField("age"), false),
+            new SortKey("Age Descending", typeof(User).GetField("age"), true),
+            new SortKey("Admin", typeof(User).GetField("isAdmin"), false),
+            new SortKey("Not Admin", typeof(User).GetField("isAdmin"), true)
         };
 
         private const int encryptionOffsetAmount = 100;
 
-        public static bool FindUser(string username, out User foundUser)
+        public static bool FindUser(string username, out User foundUser, User user)
         {
             // Returns true if it finds a user by a certian username and outputs the user to foundUser
             bool userExists = false;
@@ -159,10 +171,10 @@ namespace Assignment_1
             return userExists;
         }
 
-        public static bool FindUser(string username)
+        public static bool FindUser(string username, User user)
         {
             // Overloads the FindUser fucntion and disregards the user output
-            return FindUser(username, out _);
+            return FindUser(username, out _, user);
         }
 
         public static void SortUsers(SortKey sortKey)
@@ -182,7 +194,7 @@ namespace Assignment_1
                     switch (Type.GetTypeCode(sortKey.field.FieldType))
                     {
                         case TypeCode.Int32:
-                            if ((int)sortKey.field.GetValue(userList[i - 1]) < (int)sortKey.field.GetValue(userList[i]))
+                            if ((int)sortKey.field.GetValue(userList[i - 1]) > (int)sortKey.field.GetValue(userList[i]))
                                 sorting = SwapUsers(ref userList[i - 1], ref userList[i]);
                             break;
                         case TypeCode.Boolean:
@@ -313,7 +325,7 @@ namespace Assignment_1
         public static bool Login(string username, string password)
         {
             // Logs in if the username/password is valid
-            if (FindUser(username, out User userLookup))
+            if (FindUser(username, out User userLookup, user))
             {
                 if (Encrypt(password) == userLookup.password)
                 {

@@ -13,13 +13,14 @@ namespace Assignment_1
 {
     public partial class frmProfile : Form
     {
+        User user;
         bool popout;
-        
 
-        public frmProfile(User user, bool popout = false)
+        public frmProfile(User userProfile, bool popout = false)
         {
             InitializeComponent();
 
+            user = userProfile;
             this.popout = popout;
             lblUsername.Text = user.username;
             txtBio.Text = user.bio;
@@ -29,7 +30,7 @@ namespace Assignment_1
             lblAge.Text = user.age.ToString();
             lblGender.Text = User.genders[user.gender];
 
-            if (user == UserManager.user)
+            if (user == UserManager.user || UserManager.user.isAdmin)
                 btnEdit.Visible = true;
             else
                 btnEdit.Visible = false;
@@ -38,7 +39,7 @@ namespace Assignment_1
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Hide();
-            frmProfileEdit profileEdit = new frmProfileEdit();
+            frmProfileEdit profileEdit = new frmProfileEdit(user);
             profileEdit.ShowDialog();
         }
 

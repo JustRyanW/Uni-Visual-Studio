@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lsbUsers = new System.Windows.Forms.ListBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.cbxSort = new System.Windows.Forms.ComboBox();
@@ -37,18 +36,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
-            // lsbUsers
-            // 
-            this.lsbUsers.FormattingEnabled = true;
-            this.lsbUsers.Location = new System.Drawing.Point(12, 294);
-            this.lsbUsers.Name = "lsbUsers";
-            this.lsbUsers.Size = new System.Drawing.Size(224, 95);
-            this.lsbUsers.TabIndex = 0;
-            // 
             // btnBack
             // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBack.Location = new System.Drawing.Point(312, 15);
+            this.btnBack.Location = new System.Drawing.Point(704, 15);
             this.btnBack.Margin = new System.Windows.Forms.Padding(6);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(65, 35);
@@ -59,8 +51,9 @@
             // 
             // btnProfile
             // 
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProfile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProfile.Location = new System.Drawing.Point(245, 15);
+            this.btnProfile.Location = new System.Drawing.Point(637, 15);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(6);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(55, 35);
@@ -71,9 +64,10 @@
             // 
             // cbxSort
             // 
+            this.cbxSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSort.FormattingEnabled = true;
-            this.cbxSort.Location = new System.Drawing.Point(245, 78);
+            this.cbxSort.Location = new System.Drawing.Point(637, 78);
             this.cbxSort.Name = "cbxSort";
             this.cbxSort.Size = new System.Drawing.Size(132, 21);
             this.cbxSort.TabIndex = 31;
@@ -81,8 +75,9 @@
             // 
             // lblSortLabel
             // 
+            this.lblSortLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSortLabel.AutoSize = true;
-            this.lblSortLabel.Location = new System.Drawing.Point(286, 59);
+            this.lblSortLabel.Location = new System.Drawing.Point(678, 59);
             this.lblSortLabel.Margin = new System.Windows.Forms.Padding(3);
             this.lblSortLabel.Name = "lblSortLabel";
             this.lblSortLabel.Size = new System.Drawing.Size(41, 13);
@@ -91,26 +86,34 @@
             // 
             // dgvList
             // 
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AllowUserToResizeColumns = false;
+            this.dgvList.AllowUserToResizeRows = false;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Location = new System.Drawing.Point(15, 15);
             this.dgvList.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
-            this.dgvList.Size = new System.Drawing.Size(218, 168);
+            this.dgvList.RowHeadersWidth = 40;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvList.Size = new System.Drawing.Size(610, 331);
             this.dgvList.TabIndex = 34;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 396);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(784, 361);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.lblSortLabel);
             this.Controls.Add(this.cbxSort);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lsbUsers);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(408, 435);
+            this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "frmUsers";
             this.Text = "Users";
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
@@ -120,8 +123,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lsbUsers;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.ComboBox cbxSort;
