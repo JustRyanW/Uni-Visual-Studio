@@ -15,9 +15,7 @@ namespace Assignment_1
     {
         static readonly string[] genders = { "Other", "Male", "Female" };
 
-        User user = UserManager.user;
-
-        public frmProfile()
+        public frmProfile(User user)
         {
             InitializeComponent();
 
@@ -28,6 +26,11 @@ namespace Assignment_1
             lblEmail.Text = user.email;
             lblAge.Text = user.age.ToString();
             lblGender.Text = genders[user.gender];
+
+            if (user == UserManager.user)
+                btnEdit.Visible = true;
+            else
+                btnEdit.Visible = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -37,12 +40,11 @@ namespace Assignment_1
             profileEdit.ShowDialog();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            UserManager.user = null;
             Hide();
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
+            frmHome home = new frmHome();
+            home.ShowDialog();
         }
     }
 }

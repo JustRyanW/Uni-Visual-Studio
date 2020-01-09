@@ -44,6 +44,7 @@
             this.lblFirstname = new System.Windows.Forms.Label();
             this.lblLastname = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -221,11 +222,23 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(631, 95);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(128, 68);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmProfileEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 729);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblLastname);
             this.Controls.Add(this.lblFirstname);
             this.Controls.Add(this.txtLastname);
@@ -267,5 +280,6 @@
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.Label lblFirstname;
         private System.Windows.Forms.Label lblLastname;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

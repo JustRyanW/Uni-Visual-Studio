@@ -276,16 +276,6 @@ namespace Assignment_1
         
     }
 
-    public static class FormManager
-    {
-        private static Form currentForm = new frmLogin();
-
-        public static void Run()
-        {
-            Application.Run(currentForm);
-        }
-    }
-
     static class Program
     {
         /// <summary>
@@ -305,7 +295,7 @@ namespace Assignment_1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FormManager.Run();
+            Application.Run(new frmLogin());
         }
     }
 }

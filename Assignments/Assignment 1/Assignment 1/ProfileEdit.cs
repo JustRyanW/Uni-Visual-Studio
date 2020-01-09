@@ -33,10 +33,17 @@ namespace Assignment_1
             {
                 UserManager.WriteUsers();
 
-                Close();
-                frmProfile profile = new frmProfile();
+                Hide();
+                frmProfile profile = new frmProfile(UserManager.user);
                 profile.ShowDialog();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmProfile profile = new frmProfile(UserManager.user);
+            profile.ShowDialog();
         }
     }
 }

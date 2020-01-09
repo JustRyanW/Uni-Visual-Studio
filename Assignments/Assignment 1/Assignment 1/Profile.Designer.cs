@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfile));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblAgeLabel = new System.Windows.Forms.Label();
             this.lblGenderLabel = new System.Windows.Forms.Label();
@@ -44,16 +43,10 @@
             this.lblFirstname = new System.Windows.Forms.Label();
             this.lblLastname = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Assignment_1.Properties.Resources.blank_profile;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // lblUsername
             // 
@@ -127,18 +120,25 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnLogout
+            // btnBack
             // 
-            resources.ApplyResources(this.btnLogout, "btnLogout");
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Name = "btnBack";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Assignment_1.Properties.Resources.blank_profile;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // frmProfile
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblLastname);
             this.Controls.Add(this.lblFirstname);
@@ -178,6 +178,6 @@
         private System.Windows.Forms.Label lblFirstname;
         private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnBack;
     }
 }

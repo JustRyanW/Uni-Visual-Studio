@@ -31,6 +31,7 @@
             this.brnProfile = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // brnProfile
@@ -70,13 +71,27 @@
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuit.Location = new System.Drawing.Point(288, 169);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(6);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(200, 100);
+            this.btnQuit.TabIndex = 3;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 329);
+            this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.brnProfile);
@@ -91,5 +106,6 @@
         private System.Windows.Forms.Button brnProfile;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnQuit;
     }
 }
