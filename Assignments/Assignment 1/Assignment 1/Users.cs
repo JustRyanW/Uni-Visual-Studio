@@ -31,6 +31,7 @@ namespace Assignment_1
         {
             // Open a profile window of the selected user
             User selectedUser = (User)dgvList.CurrentRow.DataBoundItem;
+            Hide();
             frmProfile profile = new frmProfile(selectedUser, true);
             profile.ShowDialog();
         }

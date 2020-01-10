@@ -42,15 +42,19 @@ namespace Assignment_1
         {
             // Goes to the profile edit page
             Hide();
-            frmProfileEdit profileEdit = new frmProfileEdit(user);
+            frmProfileEdit profileEdit = new frmProfileEdit(user, popout);
             profileEdit.ShowDialog();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            // If it is a popout window then just close
+            // If it is a popout window then go back to users
             if (popout)
-                Close();
+            {
+                Hide();
+                frmUsers usersForm = new frmUsers();
+                usersForm.ShowDialog();
+            }
             else
             {
                 // Otherwise go to home

@@ -84,9 +84,9 @@ namespace Assignment_1
             else if (password == username || password == UserManager.Encrypt(username))
                 MessageBox.Show("Your password must be different from your username");
             else if (firstName.Length > 16)
-                MessageBox.Show("First name must be more than 16 characters");
+                MessageBox.Show("First name must be no more than 16 characters");
             else if (lastName.Length > 16)
-                MessageBox.Show("Last name must be more than 16 characters");
+                MessageBox.Show("Last name must be no more than 16 characters");
             else
             {
                 // Assigns data to the user and returns true
