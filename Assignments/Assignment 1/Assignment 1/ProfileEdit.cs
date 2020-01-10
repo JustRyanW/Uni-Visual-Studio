@@ -6,12 +6,14 @@ namespace Assignment_1
     public partial class frmProfileEdit : Form
     {
         User user;
+        bool popout;
 
-        public frmProfileEdit(User userToEdit)
+        public frmProfileEdit(User userToEdit, bool popout = false)
         {
             InitializeComponent();
 
             user = userToEdit;
+            this.popout = popout;
             // Setup page with user data
             txtUsername.Text = user.username;
             txtBio.Text = user.bio;
@@ -39,7 +41,7 @@ namespace Assignment_1
                 UserManager.WriteUsers();
 
                 Hide();
-                frmProfile profile = new frmProfile(user);
+                frmProfile profile = new frmProfile(user, popout);
                 profile.ShowDialog();
             }
         }
@@ -48,7 +50,7 @@ namespace Assignment_1
         {
             // Go to the profile page
             Hide();
-            frmProfile profile = new frmProfile(user);
+            frmProfile profile = new frmProfile(user, popout);
             profile.ShowDialog();
         }
 

@@ -37,37 +37,16 @@ False
 id
 2
 age
-18
+19
 gender
 1
-~
-username
-helen
-password
-ØÖÅÍÒÓÖ
-bio
-Helens bio
-firstName
-Helen
-lastName
-Trainor
-email
-helen@gmail.com
-isAdmin
-False
-id
-3
-age
-20
-gender
-2
 ~
 username
 jack
 password
 ÐÉÚÍØØ
 bio
-I eat cheese paninis!
+I am jack levitt
 firstName
 jack
 lastName
