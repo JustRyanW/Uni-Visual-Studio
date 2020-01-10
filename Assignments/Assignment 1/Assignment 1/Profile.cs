@@ -42,7 +42,7 @@ namespace Assignment_1
         {
             // Goes to the profile edit page
             Hide();
-            frmProfileEdit profileEdit = new frmProfileEdit(user, popout);
+            frmProfileEdit profileEdit = new frmProfileEdit(user);
             profileEdit.ShowDialog();
         }
 
