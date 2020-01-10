@@ -42,27 +42,6 @@ gender
 1
 ~
 username
-helen
-password
-ØÖÅÍÒÓÖ
-bio
-Helens bio
-firstName
-Helen
-lastName
-Trainor
-email
-helen@gmail.com
-isAdmin
-False
-id
-3
-age
-20
-gender
-2
-~
-username
 jack
 password
 ÐÉÚÍØØ
