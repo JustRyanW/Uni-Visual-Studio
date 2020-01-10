@@ -13,8 +13,10 @@ namespace Assignment_1
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            // Validates the new user info
             if(UserManager.CreateUser(txtUsername.Text, txtPassword.Text))
             {
+                // Go to the profile edit page to setup a new user
                 Hide();
                 frmProfileEdit profileEdit = new frmProfileEdit(UserManager.user);
                 profileEdit.ShowDialog();
@@ -23,8 +25,10 @@ namespace Assignment_1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Validates the loging info
             if (UserManager.Login(txtUsername.Text, txtPassword.Text))
             {
+                // Go to the home page
                 Hide();
                 frmHome home = new frmHome();
                 home.ShowDialog();

@@ -52,12 +52,17 @@ namespace Assignment_1
 
         public bool Validate()
         {
+            // Checks the username/password agains different criteria and returns true if it passes
             if (UserManager.FindUser(username, this))
                 MessageBox.Show("This username is already taken");
             else if (username.Length < 4)
                 MessageBox.Show("Username must be more than 4 characters");
+            else if (username.Length > 16)
+                MessageBox.Show("Username cannot be more than 16 characters");
             else if (password.Length < 4)
                 MessageBox.Show("Password must be more than 4 characters");
+            else if (password.Length > 16)
+                MessageBox.Show("Password cannot be more than 16 characters");
             else if (password == username || password == UserManager.Encrypt(username))
                 MessageBox.Show("Your username and password must be different");
             else
@@ -67,6 +72,7 @@ namespace Assignment_1
     
         public bool ValidateAndAssign(string username, string bio, string firstName, string lastName, string email, int age, int gender)
         {
+            // Checks user data against certain criteria
             if (age < 16)
                 MessageBox.Show("You must be 16 or over to use this system");
             else if (age > 130)
@@ -77,8 +83,13 @@ namespace Assignment_1
                 MessageBox.Show("Username must be more than 4 characters");
             else if (password == username || password == UserManager.Encrypt(username))
                 MessageBox.Show("Your password must be different from your username");
+            else if (firstName.Length > 16)
+                MessageBox.Show("First name must be more than 16 characters");
+            else if (lastName.Length > 16)
+                MessageBox.Show("Last name must be more than 16 characters");
             else
             {
+                // Assigns data to the user and returns true
                 this.username = username;
                 this.bio = bio;
                 this.firstName = firstName;
@@ -88,15 +99,18 @@ namespace Assignment_1
                 this.gender = gender;
                 return true;
             }
+            // Returns false if it doesnt pass the validations
             return false;
         }
     
+        // Data below here is data that is dispayed on the users list
+
         public string Username
         {
             get { return username; }
         }
 
-        public int Id
+        public int ID
         {
             get { return id; }
         }

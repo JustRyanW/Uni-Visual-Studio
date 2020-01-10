@@ -12,6 +12,7 @@ namespace Assignment_1
 
         private void brnProfile_Click(object sender, EventArgs e)
         {
+            // Go to profile
             Hide();
             frmProfile profile = new frmProfile(UserManager.user);
             profile.ShowDialog();
@@ -19,6 +20,7 @@ namespace Assignment_1
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
+            // Go to users page
             Hide();
             frmUsers usersForm = new frmUsers();
             usersForm.ShowDialog();
@@ -26,6 +28,7 @@ namespace Assignment_1
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            // Logout and go back to login page
             UserManager.user = null;
             Hide();
             frmLogin login = new frmLogin();
@@ -34,6 +37,7 @@ namespace Assignment_1
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            // Quit the program
             Application.Exit();
         }
     }

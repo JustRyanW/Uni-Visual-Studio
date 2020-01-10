@@ -22,6 +22,7 @@ namespace Assignment_1
 
             user = userProfile;
             this.popout = popout;
+            // Setups the form with the user data
             lblUsername.Text = user.username;
             txtBio.Text = user.bio;
             lblFirstname.Text = user.firstName;
@@ -30,6 +31,7 @@ namespace Assignment_1
             lblAge.Text = user.age.ToString();
             lblGender.Text = User.genders[user.gender];
 
+            // Checks if the user should be able to edit the profile
             if (user == UserManager.user || UserManager.user.isAdmin)
                 btnEdit.Visible = true;
             else
@@ -38,6 +40,7 @@ namespace Assignment_1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            // Goes to the profile edit page
             Hide();
             frmProfileEdit profileEdit = new frmProfileEdit(user);
             profileEdit.ShowDialog();
@@ -45,10 +48,12 @@ namespace Assignment_1
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            // If it is a popout window then just close
             if (popout)
                 Close();
             else
             {
+                // Otherwise go to home
                 Hide();
                 frmHome home = new frmHome();
                 home.ShowDialog();
